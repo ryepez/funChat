@@ -1,30 +1,34 @@
 ## DareChat app
 
-**DareChat** is an app that allow users to create group and individual chats. I create this app as my final project for Udacity's nano degree in iOS. The app user Core Data, and Firebase. 
+**DareChat** is an app that allow users to create group and individual chats. I create this app as my final project for Udacity's nano degree in iOS. If you need an account, you can create one on the by pressing create account on the welcome page. The app uses Core Data, and Firebase. The intended user is anymore that want to play around with a chat app. 
 
 ## Installation 
 
 Clone the GitHub repository. 
 
-//`$ git clone https://github.com/ryepez/chatAppDare.git`
+`$ git clone https://github.com/ryepez/funChat.git`
+
 
 ## Usage 
 
+### Sign Up Screen 
+![Screenshot](signUp.png)
+
 ### Welcome Screen
-![Screenshot](login.png)
+![Screenshot](welcome.png)
 
 ### Chat 
-![Screenshot](map.png)
+![Screenshot](chat.png)
 
 ### Create Chat 
-![Screenshot](alertBeforepost.png)
+![Screenshot](createChat.png)
 
 ### Save image to coreData 
-![Screenshot](enterlocation.png)
+![Screenshot](saveImage.png)
 
 ### Images saved 
-![Screenshot](mapPost.png)
-To save image on Core Data put you finder on the screen on the image that you
+![Screenshot](image.png)
+To save image on Core Data put you finger on the screen on the image that you
 want to save for a few seconds. After a few seconds, the word, "save" will appear
 press on it and done! 
 

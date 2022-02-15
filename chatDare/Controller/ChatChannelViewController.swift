@@ -62,19 +62,24 @@ class ChatChannelViewController: UIViewController {
         //navigation back to normal
         getNavigationBackToNormal()
     
-        //getting channel data from coreData
+        //getting channel data from coreData if coredata is not emply
         setUpFetchedResultsController()
+      
+     
+        
         
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
     
+        setUpFetchedResultsController()
+
         //singleton
         userID = Auth.auth().currentUser!.uid
         
         //setting the database to update when users add new messages
-     configureChange(user: userID)
+        configureChange(user: userID)
         
         //navigation back to normal
         getNavigationBackToNormal()
@@ -742,6 +747,7 @@ extension ChatChannelViewController:NSFetchedResultsControllerDelegate {
         let sortDescriptor = NSSortDescriptor(key: "id", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
+
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         
         fetchedResultsController.delegate = self
