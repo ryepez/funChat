@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Channel" representedClassName="Channel" syncable="YES" codeGenerationType="class">
+        <attribute name="dateSent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <attribute name="members" optional="YES" attributeType="Binary"/>
+        <attribute name="profileFotoSender" optional="YES" attributeType="String"/>
+        <attribute name="readBy" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="tittle" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Message" representedClassName="Message" syncable="YES" codeGenerationType="class">
+        <attribute name="dateSent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="messageImage" optional="YES" attributeType="String"/>
+        <attribute name="profileFotoSender" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Channel" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Message" positionX="-54" positionY="-9" width="128" height="104"/>
+    </elements>
+</model>

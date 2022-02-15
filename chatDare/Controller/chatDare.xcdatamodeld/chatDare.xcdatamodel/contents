@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Canal" representedClassName="Canal" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <relationship name="fotos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Foto" inverseName="channel" inverseEntity="Foto"/>
+    </entity>
+    <entity name="Foto" representedClassName="Foto" syncable="YES" codeGenerationType="class">
+        <attribute name="downloadDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="imageToUse" optional="YES" attributeType="Binary"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="channel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Canal" inverseName="fotos" inverseEntity="Canal"/>
+    </entity>
+    <elements>
+        <element name="Canal" positionX="-6528.8291015625" positionY="394.4700012207031" width="128" height="73"/>
+        <element name="Foto" positionX="-6340.791137695312" positionY="396.3136596679688" width="128" height="103"/>
+    </elements>
+</model>

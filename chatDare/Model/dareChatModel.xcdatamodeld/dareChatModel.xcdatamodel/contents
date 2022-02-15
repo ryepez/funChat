@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Canal" representedClassName="Canal" syncable="YES" codeGenerationType="class">
+        <attribute name="dataSent" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <attribute name="profileFotoSent" optional="YES" attributeType="String"/>
+        <attribute name="readBy" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="tittle" optional="YES" attributeType="String"/>
+        <relationship name="mensajes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Mensaje" inverseName="mensaje" inverseEntity="Mensaje"/>
+    </entity>
+    <entity name="Mensaje" representedClassName="Mensaje" syncable="YES" codeGenerationType="class">
+        <attribute name="dataSent" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="messageImage" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="userSent" optional="YES" attributeType="String"/>
+        <relationship name="mensaje" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Canal" inverseName="mensajes" inverseEntity="Canal"/>
+    </entity>
+    <elements>
+        <element name="Canal" positionX="-5.583740234375" positionY="20.60220336914062" width="128" height="148"/>
+        <element name="Mensaje" positionX="198.5935668945312" positionY="-10.0728759765625" width="128" height="118"/>
+    </elements>
+</model>
