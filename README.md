@@ -12,7 +12,7 @@ Clone the GitHub repository.
 ## Usage 
 
 ### Sign Up Screen  
-![Screenshot](signUp.png)       
+![Screenshot](signUp1.png)       
 
 ### Welcome Screen      
 ![Screenshot](welcome.png)
