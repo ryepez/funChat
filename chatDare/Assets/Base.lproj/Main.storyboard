@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VgA-y4-a18">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aCq-4J-Rvt">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -694,6 +694,22 @@
             <point key="canvasLocation" x="1838" y="-259"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="mjj-oK-tQS">
+            <objects>
+                <navigationController storyboardIdentifier="logInNav" id="aCq-4J-Rvt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4x4-bP-clh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VgA-y4-a18" kind="relationship" relationship="rootViewController" id="iuf-rL-R4z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sRN-mP-lVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2742" y="72"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="Asl-kl-9MY">
             <objects>
                 <navigationController storyboardIdentifier="MainTabBarController" id="O0I-zF-7nB" sceneMemberID="viewController">
@@ -707,7 +723,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGO-zP-mq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1436" y="-637"/>
+            <point key="canvasLocation" x="-1625" y="-659"/>
         </scene>
         <!--Create Chat View Controller-->
         <scene sceneID="hLB-Ti-8CQ">

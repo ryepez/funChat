@@ -14,6 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     let dataController = DataController(modelName: "chatDare")
+    
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -24,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         
         guard let _ = (scene as? UIWindowScene) else { return }
-        
         
         
         
@@ -47,19 +47,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             dataController.load()
 
             let navigationController = window.rootViewController as! UINavigationController
-            let chatListViewController = navigationController.topViewController as! ChatChannelViewController
+           let chatListViewController = navigationController.topViewController as! ChatChannelViewController
             chatListViewController.dataController = dataController
             
             
         } else {
             //user not logged
-            let loginNavController = storyboard.instantiateViewController(identifier: "LoginViewController")
+            let loginNavController = storyboard.instantiateViewController(identifier: "logInNav")
             window?.rootViewController = loginNavController
+        
+            dataController.load()
+
+        let navigationController = window?.rootViewController as! UINavigationController
+        let login = navigationController.topViewController as! LoginViewController
+        login.dataController = dataController
+
         }
         
     }
     
-    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true, login: Bool) {
         
         guard let window = self.window else {
             return
@@ -67,10 +74,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window.rootViewController = vc
         
-        
+     //   let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
         //add transition navigation
         
-        UIView.transition(with: window, duration: 0.5, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
+        if login {
+            //sending data to Chat Controller
+            let navigationController = window.rootViewController as! UINavigationController
+            let cv = navigationController.topViewController as! ChatChannelViewController
+            cv.dataController = dataController
+            //add transition navigation
+            UIView.transition(with: window, duration: 0.5, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
+            
+            
+        } else {
+            print("logingOut")
+            UIView.transition(with: window, duration: 0.5, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
+        }
+        
+       
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

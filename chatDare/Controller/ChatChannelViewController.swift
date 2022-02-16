@@ -11,7 +11,6 @@ import FirebaseStorageUI
 import CoreData
 
 
-
 class ChatChannelViewController: UIViewController {
  
     @IBOutlet weak var tableView: UITableView!
@@ -65,13 +64,14 @@ class ChatChannelViewController: UIViewController {
         //navigation back to normal
         getNavigationBackToNormal()
     
-        checkingRunBefore()
+
+        setUpFetchedResultsController()
+
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
     
-       // checkingRunBefore()
 
         //singleton
         userID = Auth.auth().currentUser!.uid
@@ -82,7 +82,11 @@ class ChatChannelViewController: UIViewController {
         //navigation back to normal
         getNavigationBackToNormal()
         
+
         tableView.reloadData()
+        
+        //checking it run before
+        checkingRunBefore()
     }
     
     func checkingRunBefore() {
@@ -90,12 +94,9 @@ class ChatChannelViewController: UIViewController {
         let isSliderSet = UserDefaults.standard.bool(forKey: "firtRun")
         
         if isSliderSet {
-            //getting channel data from coreData if coredata is not emply
             UserDefaults.standard.set(false, forKey: "firtRun")
-            print("not fetching data until next time")
-            
         } else {
-            setUpFetchedResultsController()
+            print("this not the first running app")
         }
 
     }
@@ -270,7 +271,7 @@ class ChatChannelViewController: UIViewController {
         let logInVC = storyboard.instantiateViewController(identifier: "LoginViewController")
         
         //to change the root view controller calling the object created in scene delegete
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(logInVC)
+               (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(logInVC, login: false)
            }
            catch let error as NSError
            {

@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import AVFoundation
-
+import CoreData
 
 //player properties
 
@@ -17,6 +17,10 @@ let playerView = AVPlayerLayer()
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    //codeDate propeties
+    //Data injection
+    var dataController: DataController!
+    
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -255,9 +259,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-   
-            //to change the root view controller calling the object created in scene delegete
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+    
+        
+      
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController, login: true)
+            
+    
+        
+    
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
