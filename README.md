@@ -14,11 +14,11 @@ Clone the GitHub repository.
 ### Sign Up Screen  
 ![Screenshot](signUp.png)       
 
-###Welcome Screen      
- ![Screenshot](welcome.png)
+### Welcome Screen      
+![Screenshot](welcome.png)
               
-###Chat
- ![Screenshot](chat.png)
+### Chat
+![Screenshot](chat.png)
 
 ### Create Chat 
 ![Screenshot](createChat.png)
