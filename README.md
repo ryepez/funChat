@@ -11,23 +11,26 @@ Clone the GitHub repository.
 
 ## Usage 
 
-### Sign Up Screen         Welcome Screen
-![Screenshot](signUp.png) ![Screenshot](welcome.png)
- 
-### Chat 
-![Screenshot](chat.png)
+### Sign Up Screen  
+![Screenshot](signUp.png)       
+
+###Welcome Screen      
+ ![Screenshot](welcome.png)
+              
+###Chat
+ ![Screenshot](chat.png)
 
 ### Create Chat 
 ![Screenshot](createChat.png)
 
 ### Save image to coreData 
-![Screenshot](image.png)
+![Screenshot](saveImage.png)
 
 To save image on Core Data put you finger on the screen on the image that you
 want to save for a few seconds. After a few seconds, the word, "save" will appear
 press on it and done! 
 
 ### Images saved 
-![Screenshot](saveImage.png)
+![Screenshot](image.png)
 
 

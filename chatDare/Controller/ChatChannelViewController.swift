@@ -11,6 +11,7 @@ import FirebaseStorageUI
 import CoreData
 
 
+
 class ChatChannelViewController: UIViewController {
  
     @IBOutlet weak var tableView: UITableView!
@@ -19,7 +20,7 @@ class ChatChannelViewController: UIViewController {
     //codeDate propeties
     //Data injection
     var dataController: DataController!
-    //pin to store data
+    //channel to store data
     var fetchedResultsController: NSFetchedResultsController<Canal>!
 
     
@@ -55,6 +56,8 @@ class ChatChannelViewController: UIViewController {
         displayName =  Auth.auth().currentUser?.email?.components(separatedBy: "@")[0] ?? "?User?"
         userID = Auth.auth().currentUser!.uid
         
+       
+        
         //setting up db and storage
         configureDatabase(user: userID)
         configureStorage()
@@ -62,18 +65,13 @@ class ChatChannelViewController: UIViewController {
         //navigation back to normal
         getNavigationBackToNormal()
     
-        //getting channel data from coreData if coredata is not emply
-        setUpFetchedResultsController()
-      
-     
-        
-        
+        checkingRunBefore()
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
     
-        setUpFetchedResultsController()
+       // checkingRunBefore()
 
         //singleton
         userID = Auth.auth().currentUser!.uid
@@ -87,6 +85,20 @@ class ChatChannelViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func checkingRunBefore() {
+        
+        let isSliderSet = UserDefaults.standard.bool(forKey: "firtRun")
+        
+        if isSliderSet {
+            //getting channel data from coreData if coredata is not emply
+            UserDefaults.standard.set(false, forKey: "firtRun")
+            print("not fetching data until next time")
+            
+        } else {
+            setUpFetchedResultsController()
+        }
+
+    }
 
     
     /*
@@ -714,9 +726,10 @@ extension ChatChannelViewController:NSFetchedResultsControllerDelegate {
     func addChannel(id: String) {
         
         //seting the pin data and saving it
+        
         let CanalToUse = Canal(context: dataController.viewContext)
         CanalToUse.id = id
-     
+        
         //saving the data
         
         do {
@@ -762,7 +775,6 @@ extension ChatChannelViewController:NSFetchedResultsControllerDelegate {
     }
     
     
-   
-    
+
 }
 

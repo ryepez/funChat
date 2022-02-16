@@ -13,10 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       
+       //config firebase
         FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = false
         
+        //using firebase persistence to true
+        Database.database().isPersistenceEnabled = true
+        
+        //checking if first time running app
+        checkIfFirstLaunch()
+
         return true
     }
 
@@ -45,6 +50,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func saveViewContext() {
         print("save")
 
+    }
+    
+    func checkIfFirstLaunch() {
+        
+        if UserDefaults.standard.bool(forKey: "hasLaunchBefore") {
+            print("The app has launched before")
+        } else {
+            //setting the value if is first time that app runs
+            print("This is the first time this app runs!")
+            UserDefaults.standard.set(true, forKey: "hasLaunchBefore")
+            UserDefaults.standard.set(true, forKey: "firtRun")
+            UserDefaults.standard.synchronize()
+        }
     }
 
 }
