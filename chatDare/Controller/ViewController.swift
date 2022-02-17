@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var currentCanal: Canal!
     var dataController:DataController!
     
-    
+    let signupControllerIdentifier = "ListOfPeopleViewController"
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageMessage: UIButton!
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
     @objc func listOfPeople() {
         
         let controller: ListOfPeopleViewController
-        controller = storyboard?.instantiateViewController(withIdentifier: "ListOfPeopleViewController") as! ListOfPeopleViewController
+        controller = storyboard?.instantiateViewController(withIdentifier: signupControllerIdentifier) as! ListOfPeopleViewController
         controller.chatID = treadID
         
         //coreData
