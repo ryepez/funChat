@@ -28,27 +28,35 @@ Therefore, install `pod install` CocoaPods before running the project. After ins
 * FirebaseStorageUI
 
 ## Usage 
-To use just download the app from this repository. To access the app you will need to create an accountthat can be done on welcome page. After that you will be able to send message to anymore on the app.
+To use just download the app from this repository. To access the app you will need to create an account that can be done on welcome page. After that you will be able to send message to anymore on the app.
 ___
 ### Sign Up Screen   
 ![Screenshot](signUp1.png)       
+
 Sign up screen to login or create account.
 
 ### Welcome Screen      
 ![Screenshot](welcome.png)
+
 On the welcome screen you can see the channels that you are part of. Also you can create new one press on the top right button.               
 ### Chat
 ![Screenshot](chat.png)
+
 This a screenshot of the look of the chat.
 ### Create Chat 
 ![Screenshot](createChat.png)
+
 On this screen, you can create new chats!
 ### Save image to coreData 
 ![Screenshot](saveImage.png)
+
 To save image on Core Data put you finger on the screen on the image that you
 want to save for a few seconds. After a few seconds, the word, "save" will appear
 press on it and done! 
 ### Images saved 
 ![Screenshot](image.png)
+
 You can see the save images on this screen as seen above.
 
+## Maintainers
+@ryepez
